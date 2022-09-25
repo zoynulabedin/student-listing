@@ -1,0 +1,96 @@
+<style>
+    .fa-file-image{display: none !important;}
+    .block_img{display: block !important}
+</style>
+<div class="container mt-5">
+	<div class="row mt-3 justify-content-center">
+		<div class="col-md-7 shadow p-0 m-0">
+			<div class="header d-flex justify-content-between align-items-center p-3">
+				<div class="header-left">
+					<a class="btn btn-primary" href="/"
+						><i class="fas fa-home"></i> Back to home</a
+					>
+				</div>
+				<div class="header-right">
+					<h3 class="text-white">Edit of <%= name %></h3>
+				</div>
+			</div>
+			<div class="row p-4">
+				<form
+					action="/student/update/<%= id %> "
+					method="POST"
+					enctype="multipart/form-data"
+				>
+					<div class="my-3">
+						<label for="name">Name</label>
+						<input
+							class="form-control p-2"
+							type="text"
+							name="name"
+							id="name"
+							value="<%= name %>"
+						/>
+					</div>
+
+					<div class="my-3">
+						<label for="email">Email</label>
+						<input
+							class="form-control p-2"
+							type="text"
+							name="email"
+							id="email"
+							value="<%= email %>"
+						/>
+					</div>
+					<div class="my-3">
+						<label for="phone">Phone (Only For Bangladesh +88)</label>
+						<input
+							class="form-control p-2"
+							type="text"
+							name="phone"
+							id="phone"
+							value="<%= phone %>"
+						/>
+					</div>
+
+					<div class="my-3">
+						<label for="Department">Department</label>
+						<select name="department" id="Department" class="form-control p-2">
+							<option value="">-- Select --</option>
+                            
+                            <option <% if (department == "php") { %> selected<% } %> value="php">PHP</option>
+							<option <% if (department == "graphics") { %> selected<% } %> value="graphics">Graphics Design</option>
+							<option <% if (department == "mern") { %> selected<% } %> value="mern">Mern Stack</option>
+							<option <% if (department == "java") { %> selected<% } %> value="java">Java</option>
+							<option <% if (department == "laravel") { %> selected<% } %> value="laravel">Laravel</option>
+							<option <% if (department == "net") { %> selected<% } %> value="net">.Net</option>
+						</select>
+					</div>
+					<div class="my-3 file-icons d-flex justify-content-center">
+						<label class="text-center" for="files"
+							><i id="fileimgage" class="fas fa-file-image"></i>
+							<p class="image_update"></p>
+							<img class="prev_img block_img" id="preview_img" src="../../images/<%= photo %> " alt="" />
+						</label>
+						<input type="file" id="files" class="opacity-zero-d" name="photo" />
+					</div>
+					<button class="btn btn-danger w-100 remove-btn">Remove</button>
+					<div class="my-3">
+						<input
+							class="btn btn-primary w-100 p-1"
+							type="submit"
+							value="Update <%= name %>"
+						/>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- footer -->
+	<div class="row justify-content-center mt-5 bg-gray">
+		<div class="col-md-10 text-center">
+			<hr />
+			@ 2022 | Allrights Reserved by zoynul
+		</div>
+	</div>
+</div>

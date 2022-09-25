@@ -1,0 +1,53 @@
+<div class="container mt-5">
+	<div class="row mt-3 justify-content-center">
+		<div class="col-md-10">
+			<div
+				class="header d-flex justify-content-between align-items-center p-3 mb-3"
+			>
+				<div class="header-left">
+					<a class="btn btn-primary" href="/student/unverify"
+						><i class="fas fa-database"></i>Back To Unverify list</a
+					>
+				</div>
+				<div class="header-right">
+					<h3 class="text-white">Verify your account</h3>
+				</div>
+			</div>
+			<div class="row justify-content-center mb-5 pt-5">
+				<!-- item -->
+
+				<div class="col-md-7">
+					<div class="card shadow p-3">
+						<p style="color: green">
+							HI <strong><%= name %> !</strong> sms has been sent for
+							verification! please verify your account. Thank you
+						</p>
+
+						<form action="/student/otpverify/" method="POST">
+							<input
+								class="form-control"
+								type="text"
+								name="otp"
+								placeholder="OTP"
+							/>
+							<input
+								class="btn btn-primary mt-3"
+								type="submit"
+								value="Verify OTP"
+							/>
+						</form>
+					</div>
+				</div>
+
+				<!-- item end -->
+			</div>
+		</div>
+	</div>
+	<!-- footer -->
+	<div class="row justify-content-center mt-5 bg-gray">
+		<hr />
+		<div class="col-md-10 text-center">
+			@ 2022 | Allrights Reserved by zoynul
+		</div>
+	</div>
+</div>
